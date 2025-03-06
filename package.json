@@ -4,7 +4,7 @@
   "description": "IMEI Generator on Netlify",
   "main": "index.js",
   "dependencies": {
-    "luhn": "^1.1.1"
+    "luhn": "^1.0.0"
   },
   "scripts": {
     "start": "netlify dev"
