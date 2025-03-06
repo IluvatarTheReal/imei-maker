@@ -24,7 +24,11 @@
   <script>
     // Function to fetch a new IMEI from the server
     async function generateIMEI() {
-      const response = await fetch('/.netlify/functions/generateIMEI');
+      const response = await fetch('/.netlify/functions/generateIMEI'); // Correct path to serverless function
+      if (!response.ok) {
+        console.error('Failed to generate IMEI:', response.status);
+        return;
+      }
       const data = await response.json();
       document.getElementById('imei').textContent = `Generated IMEI: ${data.imei}`;
     }
