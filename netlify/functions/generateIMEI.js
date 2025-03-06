@@ -29,9 +29,17 @@ function generateIMEI() {
 }
 
 exports.handler = async function(event, context) {
-  const imei = generateIMEI();  // Generate IMEI
-  return {
-    statusCode: 200,
-    body: JSON.stringify({ imei })  // Return IMEI as JSON response
-  };
+  try {
+    const imei = generateIMEI();  // Generate IMEI
+    return {
+      statusCode: 200,
+      body: JSON.stringify({ imei })  // Return IMEI as JSON response
+    };
+  } catch (error) {
+    console.error('Error generating IMEI:', error);
+    return {
+      statusCode: 500,
+      body: JSON.stringify({ error: 'Failed to generate IMEI' })
+    };
+  }
 };
