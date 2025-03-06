@@ -1,0 +1,14 @@
+{
+  "name": "imei-generator-netlify",
+  "version": "1.0.0",
+  "description": "IMEI Generator on Netlify",
+  "main": "index.js",
+  "dependencies": {
+    "luhn": "^1.1.1"
+  },
+  "scripts": {
+    "start": "netlify dev"
+  },
+  "author": "",
+  "license": "ISC"
+}
